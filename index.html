@@ -627,6 +627,44 @@
       border: 1px solid rgba(255,255,255,0.4);
       padding: 0.4rem 1rem;
     }
+    .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 12px;
+}
+
+.gallery-item {
+  width: 100%;
+  aspect-ratio: 4/3; /* Keeps all images proportional */
+  overflow: hidden;
+  border: 1px solid rgba(201,168,76,0.08);
+  border-radius: 4px;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.04);
+}
+
+/* Mobile adjustments */
+@media (max-width: 900px) {
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+}
 
     /* ── PROCESS ── */
     #process { background: var(--dark); }
@@ -1009,25 +1047,20 @@
 <section id="gallery">
   <div class="container">
     <div class="gallery-header reveal">
-      <p class="section-label">Our Work</p>
-      <h2 class="section-title">Before &amp; <em>After</em></h2>
+      <p class="section-label">Before & After</p>
+      <h2 class="section-title">Our Work <em>In Action</em></h2>
+      <p class="gallery-sub">See the transformation in every home we clean.</p>
     </div>
-    <p class="gallery-sub reveal">Real results from real Orange County homes. Photos added as we go.</p>
-
-    <!--
-      INSTRUCTIONS: To add photos, replace the .gallery-placeholder divs inside each .gallery-item
-      with: <img src="YOUR-PHOTO.jpg" alt="Cleaning service Orange County" />
-      You can add as many .gallery-item divs as needed.
-    -->
-    <img src="./before-and-after-bathroom1.png" 
-     alt="Before and after bathroom cleaning Orange County" 
-     style="width:50%; height:auto; object-fit:cover;" />
-    
-    <img src="./Before-and-After2.png" 
-     alt="Before and after bathroom cleaning Orange County" 
-     style="width:50%; height:auto; object-fit:cover;" />
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="before-and-after-bathroom1.png" alt="Before and after bathroom cleaning Orange County">
+      </div>
+      <div class="gallery-item">
+        <img src="before-and-after-bathroom2.png" alt="Before and after bathroom cleaning Orange County">
+      </div> 
+    </div>
+  </div>
 </section>
-
 
 <!-- ── HERO ── -->
 <section id="hero">
