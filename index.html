@@ -493,6 +493,64 @@
     font-size: 0.8rem; color: var(--light);
     font-style: italic;
   }
+  <script>
+  // Mobile menu
+  function toggleMenu() {
+    document.getElementById('mobileMenu').classList.toggle('open');
+  }
+  document.addEventListener('click', function(e) {
+    const menu = document.getElementById('mobileMenu');
+    const nav = document.querySelector('nav');
+    if (!nav.contains(e.target) && !menu.contains(e.target)) {
+      menu.classList.remove('open');
+    }
+  });
+
+  // Carousel
+  let currentSlide = 0;
+  const track = document.getElementById('carouselTrack');
+  const slides = track.querySelectorAll('.carousel-slide');
+  const dotsContainer = document.getElementById('carouselDots');
+  const total = slides.length;
+
+  slides.forEach((_, i) => {
+    const dot = document.createElement('button');
+    dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+    dot.setAttribute('aria-label', 'Slide ' + (i+1));
+    dot.onclick = () => goTo(i);
+    dotsContainer.appendChild(dot);
+  });
+
+  function goTo(n) {
+    currentSlide = (n + total) % total;
+    track.style.transform = `translateX(-${currentSlide * 100}%)`;
+    document.querySelectorAll('.carousel-dot').forEach((d, i) => {
+      d.classList.toggle('active', i === currentSlide);
+    });
+  }
+  function slide(dir) { goTo(currentSlide + dir); }
+
+  let touchStart = 0;
+  track.addEventListener('touchstart', e => touchStart = e.touches[0].clientX, { passive: true });
+  track.addEventListener('touchend', e => {
+    const diff = touchStart - e.changedTouches[0].clientX;
+    if (Math.abs(diff) > 40) slide(diff > 0 ? 1 : -1);
+  });
+
+  let autoplay = setInterval(() => slide(1), 4500);
+  track.addEventListener('mouseenter', () => clearInterval(autoplay));
+  track.addEventListener('mouseleave', () => { autoplay = setInterval(() => slide(1), 4500); });
+
+  // Email reveal
+  function revealEmail(el) {
+    var e = 'bertoniclean' + '@' + 'gmail.com';
+    el.href = 'mailto:' + e;
+    el.textContent = e;
+    el.onclick = null;
+  }
+</script>
+</body>
+</html>
 
 
   /* ── CITIES SECTION ── */
