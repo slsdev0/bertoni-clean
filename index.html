@@ -495,7 +495,6 @@
   }
 
 
-
   /* ── CITIES SECTION ── */
   #cities { background: #2C3E2F; padding: 3.5rem 2rem; }
   .cities-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
@@ -956,7 +955,7 @@
   <p style="margin-top:0.75rem;">© 2026 Bertoni Clean · All Rights Reserved</p>
 </footer>
 
-  <script>
+<script>
   // Mobile menu
   function toggleMenu() {
     document.getElementById('mobileMenu').classList.toggle('open');
@@ -976,6 +975,7 @@
   const dotsContainer = document.getElementById('carouselDots');
   const total = slides.length;
 
+  // Build dots
   slides.forEach((_, i) => {
     const dot = document.createElement('button');
     dot.className = 'carousel-dot' + (i === 0 ? ' active' : '');
@@ -991,26 +991,4 @@
       d.classList.toggle('active', i === currentSlide);
     });
   }
-  function slide(dir) { goTo(currentSlide + dir); }
-
-  let touchStart = 0;
-  track.addEventListener('touchstart', e => touchStart = e.touches[0].clientX, { passive: true });
-  track.addEventListener('touchend', e => {
-    const diff = touchStart - e.changedTouches[0].clientX;
-    if (Math.abs(diff) > 40) slide(diff > 0 ? 1 : -1);
-  });
-
-  let autoplay = setInterval(() => slide(1), 4500);
-  track.addEventListener('mouseenter', () => clearInterval(autoplay));
-  track.addEventListener('mouseleave', () => { autoplay = setInterval(() => slide(1), 4500); });
-
-  // Email reveal
-  function revealEmail(el) {
-    var e = 'bertoniclean' + '@' + 'gmail.com';
-    el.href = 'mailto:' + e;
-    el.textContent = e;
-    el.onclick = null;
-  }
-</script>
-</body>
-</html>
+  function slide(dir) { go
