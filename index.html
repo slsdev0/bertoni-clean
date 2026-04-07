@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -114,9 +113,9 @@
   :root {
     --cream: #FAF7F2;
     --warm-white: #FFFDF9;
-    --sage: #7A9E7E;
-    --sage-dark: #5A7D5E;
-    --sage-light: #C6D9C8;
+    --sage: #C19046;
+    --sage-dark: #C19046;
+    --sage-light: #E8D5B0;
     --charcoal: #2C2C2C;
     --mid: #5A5A5A;
     --light: #9A9A9A;
@@ -195,7 +194,7 @@
   .hero {
     padding-top: 64px;
     min-height: 340px;
-    background: linear-gradient(135deg, #2C3E2F 0%, #3D5240 50%, #4A6150 100%);
+    background: linear-gradient(135deg, #3B2A10 0%, #5C4020 50%, #6E4E28 100%);
     display: flex; align-items: center; justify-content: center;
     text-align: center;
     position: relative; overflow: hidden;
@@ -279,7 +278,7 @@
   }
   .price-card.featured::before { background: var(--gold); }
   .price-card.featured {
-    background: #2C3E2F; color: #fff; border-color: #2C3E2F;
+    background: #3B2A10; color: #fff; border-color: #3B2A10;
   }
   .price-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
   .card-badge {
@@ -451,7 +450,7 @@
   }
   .slide-placeholder {
     width: 100%; height: clamp(260px, 45vw, 520px);
-    background: linear-gradient(135deg, var(--sage-light) 0%, #b5cdb7 100%);
+    background: linear-gradient(135deg, var(--sage-light) 0%, #d4b87a 100%);
     display: flex; align-items: center; justify-content: center;
     flex-direction: column; gap: 1rem;
     color: var(--sage-dark);
@@ -494,9 +493,8 @@
     font-style: italic;
   }
 
-
   /* ── CITIES SECTION ── */
-  #cities { background: #2C3E2F; padding: 3.5rem 2rem; }
+  #cities { background: #3B2A10; padding: 3.5rem 2rem; }
   .cities-inner { max-width: 1100px; margin: 0 auto; text-align: center; }
   #cities .section-label { color: var(--sage-light); }
   #cities .section-title { color: #fff; margin-bottom: 1rem; }
@@ -515,7 +513,6 @@
     transition: background 0.2s;
   }
   .city-tag:hover { background: rgba(255,255,255,0.15); color: #fff; }
-
 
   /* ── PRICING LEGEND ── */
   .pricing-legend {
@@ -569,7 +566,7 @@
 
   /* ── FOOTER ── */
   footer {
-    background: #1E2A20;
+    background: #2A1E0C;
     padding: 2.5rem 2rem;
     text-align: center;
   }
@@ -763,7 +760,7 @@
       </div>
       <div class="contact-detail">
         <div class="contact-icon">✉️</div>
-        <p><strong>Email</strong><br><a href="#" id="emailLink" onclick="revealEmail(this);return false;">bertoniclean@gmail.com</a></p>
+        <p><strong>Email</strong><br><a href="/cdn-cgi/l/email-protection#abc9ced9dfc4c5c2c8c7cecac5ebccc6cac2c785c8c4c6"><span class="__cf_email__" data-cfemail="aecccbdcdac1c0c7cdc2cbcfc0eec9c3cfc7c280cdc1c3">[email&#160;protected]</span></a></p>
       </div>
       <div class="contact-detail">
         <div class="contact-icon">🕐</div>
@@ -944,18 +941,18 @@
       <span class="city-tag">Seal Beach</span>
       <span class="city-tag">Los Alamitos</span>
       <span class="city-tag">Aliso Viejo</span>
-    
+    </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
   <div class="foot-logo">Bertoni<span>Clean</span></div>
-  <p>Professional House Cleaning · Orange County, CA · <a href="tel:7144064152">(714) 406-4152</a> · <a href="#" class="emailFooter" onclick="revealEmail(this);return false;">bertoniclean@gmail.com</a></p>
+  <p>Professional House Cleaning · Orange County, CA · <a href="tel:7144064152">(714) 406-4152</a> · <a href="/cdn-cgi/l/email-protection#f1939483859e9f98929d94909fb1969c90989ddf929e9c"><span class="__cf_email__" data-cfemail="65070017110a0b0c060900040b250208040c094b060a08">[email&#160;protected]</span></a></p>
   <p style="margin-top:0.75rem;">© 2026 Bertoni Clean · All Rights Reserved</p>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Mobile menu
   function toggleMenu() {
     document.getElementById('mobileMenu').classList.toggle('open');
@@ -991,4 +988,4 @@
       d.classList.toggle('active', i === currentSlide);
     });
   }
-  function slide(dir) { go
+  function slide(dir) { goTo(current
